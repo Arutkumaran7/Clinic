@@ -1,0 +1,6 @@
+{
+  "name": "MedCore Clinic",
+  "description": "Comprehensive medical portal featuring public appointment booking, specialists directories, a patient help center, and a secure HIPAA-compliant staff dashboard with interactive scheduling and patient records.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

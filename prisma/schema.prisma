@@ -1,0 +1,92 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Doctor {
+  id                String           @id
+  name              String
+  email             String           @unique
+  passwordHash      String
+  title             String
+  rating            Float
+  experience        Int
+  reviews           Int
+  description       String           @db.Text
+  imageUrl          String
+  specialty         String
+  department        String
+  availableSlotsRaw String           @db.Text // JSON array string of fallback/default slots
+  schedules         DoctorSchedule[]
+  leaves            DoctorLeave[]
+  appointments      Appointment[]
+}
+
+model Appointment {
+  id          String   @id
+  doctorId    String
+  doctorName  String
+  patientName String
+  patientId   String
+  date        String   // YYYY-MM-DD
+  time        String   // HH:MM AM/PM
+  type        String   // 'In-Person' | 'Virtual'
+  reason      String
+  status      String   // 'CONFIRMED' | 'PENDING' | 'URGENT'
+  room        String?
+  doctor      Doctor   @relation(fields: [doctorId], references: [id])
+}
+
+model PatientRecord {
+  id            String  @id
+  name          String
+  patientId     String
+  lastVisit     String
+  status        String  // 'ACTIVE' | 'FOLLOW-UP' | 'DISCHARGED'
+  avatarColor   String
+  gender        String
+  age           Int
+  email         String
+  phone         String
+  bloodType     String
+  conditionsRaw String  @db.Text // JSON array string or comma separated
+  notes         String? @db.Text
+}
+
+model FAQItem {
+  id       String @id
+  question String @db.Text
+  answer   String @db.Text
+  category String
+}
+
+model DoctorSchedule {
+  id                  String @id @default(uuid())
+  doctorId            String
+  dayOfWeek           Int    // 0 = Sunday, 6 = Saturday
+  shiftStart          String // e.g. "09:00 AM" or "09:00"
+  shiftEnd            String // e.g. "05:00 PM" or "17:00"
+  slotDurationMinutes Int    @default(30)
+  doctor              Doctor @relation(fields: [doctorId], references: [id], onDelete: Cascade)
+
+  @@unique([doctorId, dayOfWeek])
+}
+
+model DoctorLeave {
+  id        String  @id @default(uuid())
+  doctorId  String
+  leaveDate String  // YYYY-MM-DD
+  startTime String? // null means full day
+  endTime   String? // null means full day
+  reason    String?
+  doctor    Doctor  @relation(fields: [doctorId], references: [id], onDelete: Cascade)
+
+  @@unique([doctorId, leaveDate, startTime])
+}
