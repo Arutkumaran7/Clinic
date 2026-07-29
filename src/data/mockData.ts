@@ -333,7 +333,7 @@ export const FAQ_ITEMS: FAQItem[] = [
   {
     id: 'faq-4',
     question: 'Where is the clinic located, and can I walk in?',
-    answer: 'Our main diagnostic clinic is located in Connaught Place, New Delhi, India. While we accommodate emergency cases immediately, we highly recommend booking an appointment online to ensure minimal waiting time.',
+    answer: 'Our main diagnostic clinic is located in T. Nagar, Chennai, India. While we accommodate emergency cases immediately, we highly recommend booking an appointment online to ensure minimal waiting time.',
     category: 'Prescription Refills'
   }
 ];

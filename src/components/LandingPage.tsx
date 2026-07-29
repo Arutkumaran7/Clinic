@@ -30,7 +30,7 @@ export default function LandingPage({ onNavigate, topDoctors, onBookDoctor, onSe
           </h1>
           
           <p className="text-slate-600 text-base sm:text-lg leading-relaxed max-w-xl">
-            Experience world-class healthcare in India with our leading clinical experts. Book your in-person diagnosis at our New Delhi center or request a secure virtual consultation instantly.
+            Experience world-class healthcare in India with our leading clinical experts. Book your in-person diagnosis at our Chennai center or request a secure virtual consultation instantly.
           </p>
 
           <div className="flex flex-wrap gap-4 w-full sm:w-auto mt-2">

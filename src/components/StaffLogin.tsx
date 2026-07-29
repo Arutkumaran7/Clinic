@@ -1,14 +1,15 @@
 import { useState, FormEvent } from 'react';
 import { motion } from 'motion/react';
-import { ShieldCheck, Mail, Lock, Eye, EyeOff, LogIn, Key, PhoneCall, AlertCircle } from 'lucide-react';
+import { ShieldCheck, Mail, Lock, Eye, EyeOff, LogIn, Key, PhoneCall, AlertCircle, ArrowLeft } from 'lucide-react';
 
 interface StaffLoginProps {
+  onBack: () => void;
   onLoginSuccess: (token: string, doctorInfo: any) => void;
 }
 
-export default function StaffLogin({ onLoginSuccess }: StaffLoginProps) {
-  const [email, setEmail] = useState('rajesh@medcore.in');
-  const [password, setPassword] = useState('doctor123');
+export default function StaffLogin({ onBack, onLoginSuccess }: StaffLoginProps) {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -37,7 +38,18 @@ export default function StaffLogin({ onLoginSuccess }: StaffLoginProps) {
   };
 
   return (
-    <div className="bg-slate-50 min-h-screen font-sans flex flex-col justify-between py-12 px-6">
+    <div className="bg-slate-50 min-h-screen font-sans flex flex-col justify-between py-12 px-6 relative">
+      {/* Back Button */}
+      <div className="max-w-md w-full mx-auto mb-2">
+        <button
+          onClick={onBack}
+          className="flex items-center gap-2 text-slate-500 hover:text-slate-800 text-sm font-semibold transition cursor-pointer group"
+        >
+          <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
+          Back to Home
+        </button>
+      </div>
+
       {/* Top logo */}
       <div className="flex flex-col items-center mb-4">
         <div className="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center text-white font-bold text-2xl shadow-md mb-4">

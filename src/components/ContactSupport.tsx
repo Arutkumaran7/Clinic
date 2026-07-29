@@ -207,7 +207,7 @@ export default function ContactSupport({ onBack }: ContactSupportProps) {
                 </div>
                 <div>
                   <span className="text-slate-400 block text-[10px] uppercase font-bold tracking-wider mb-0.5">Emergency Helpline</span>
-                  <span className="text-slate-800 font-bold text-sm">+91 11 4930 2039</span>
+                  <span className="text-slate-800 font-bold text-sm">0452 124 124 4444</span>
                 </div>
               </div>
 
@@ -227,7 +227,7 @@ export default function ContactSupport({ onBack }: ContactSupportProps) {
                 </div>
                 <div>
                   <span className="text-slate-400 block text-[10px] uppercase font-bold tracking-wider mb-0.5">Clinic Location</span>
-                  <span className="text-slate-800 leading-relaxed block text-sm">Connaught Place, New Delhi, 110001, India</span>
+                  <span className="text-slate-800 leading-relaxed block text-sm">15, Khader Nawaz Khan Road, Nungambakkam, Chennai, 600006, Tamil Nadu, India</span>
                 </div>
               </div>
             </div>

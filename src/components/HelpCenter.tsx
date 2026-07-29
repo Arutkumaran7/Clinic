@@ -28,7 +28,7 @@ const ARTICLES: Article[] = [
       '2. Use our dynamic search box to look for clinical specialties, doctor names, or diagnostic fields.',
       '3. Review the available doctors, clinical experiences, and patient feedback ratings on the specialist grid.',
       '4. Click the "Book Appointment" button on your preferred specialist\'s profile card.',
-      '5. Choose your mode of consultation: "In-Person Consultation" at our New Delhi center or "Virtual Telehealth" on-screen.',
+      '5. Choose your mode of consultation: "In-Person Consultation" at our Chennai center or "Virtual Telehealth" on-screen.',
       '6. Select a preferred day in July 2026 and choose an open hourly time slot.',
       '7. Enter the patient\'s full name, clinical reason or notes, and click "Book Consultation" to lock in the appointment.',
       '8. Note: For any reschedules or cancellations, you can contact our central front-desk desk anytime.'
@@ -64,7 +64,7 @@ const ARTICLES: Article[] = [
     summary: 'Instructions on medication renewals and direct local home deliveries.',
     content: [
       '• Follow-up Directives: For patient safety, refills for chronic medication plans require a brief physical or virtual medical review if your previous consultation was more than 3 months ago.',
-      '• Pharmacy Delivery: We offer direct pharmacy home delivery services across Delhi NCR, or you can opt for quick curbside pick-up at our physical pharmacy counter in Connaught Place.',
+      '• Pharmacy Delivery: We offer direct pharmacy home delivery services across Chennai, or you can opt for quick curbside pick-up at our physical pharmacy counter in T. Nagar, Chennai.',
       '• Requesting Renewals: To request a quick renewal, simply contact our diagnostic center helpline with your medical case reference ID.'
     ]
   },

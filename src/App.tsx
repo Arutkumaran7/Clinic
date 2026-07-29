@@ -398,6 +398,7 @@ export default function App() {
               exit={{ opacity: 0 }}
             >
               <StaffLogin 
+                onBack={() => setCurrentView('home')}
                 onLoginSuccess={(token, doctorInfo) => {
                   setDoctorToken(token);
                   setLoggedInDoctor(doctorInfo);
