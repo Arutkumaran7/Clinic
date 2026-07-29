@@ -20,7 +20,8 @@ export default function StaffLogin({ onBack, onLoginSuccess }: StaffLoginProps) 
     setIsLoading(true);
 
     try {
-      const res = await fetch('/api/auth/doctor/login', {
+      const API_BASE = import.meta.env.VITE_API_URL || (typeof window !== 'undefined' && window.location.hostname.includes('github.io') ? 'https://18.60.40.74.sslip.io' : '');
+      const res = await fetch(`${API_BASE}/api/auth/doctor/login`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password })

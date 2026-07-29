@@ -51,7 +51,6 @@ EOF
 
 echo "=== Installing dependencies === "
 cd /home/ubuntu/medcore-clinic
-# We install all dependencies (including devDependencies) so that tsx is available to run seed/start scripts.
 npm install
 
 echo "=== Syncing database schema and seeding data ==="
