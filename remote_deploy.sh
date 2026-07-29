@@ -73,7 +73,7 @@ server {
     listen 80 default_server;
     listen [::]:80 default_server;
 
-    server_name _;
+    server_name 18.60.40.74.sslip.io _;
 
     location / {
         proxy_pass http://localhost:5000;
@@ -90,6 +90,11 @@ echo "=== Restarting Nginx ==="
 sudo nginx -t
 sudo systemctl restart nginx
 sudo systemctl enable nginx
+
+echo "=== Installing Certbot & Configuring SSL (HTTPS) ==="
+sudo apt-get update -y
+sudo apt-get install -y certbot python3-certbot-nginx
+sudo certbot --nginx --non-interactive --agree-tos --register-unsafely-without-email -d 18.60.40.74.sslip.io || true
 
 # Clean up remote setup script
 rm -f /home/ubuntu/remote_deploy.sh
